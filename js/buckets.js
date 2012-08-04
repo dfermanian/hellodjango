@@ -13,7 +13,7 @@ $(function() {
 			console.log(elts);
 			data = {"list": elts}
 			$.ajax({
-				url: "http://localhost:8000/services/copyitem",
+				url: "http://localhost:8000/services/moveitem",
 				type: 'POST',
 				contentType: "application/json",
 				dataType: "text",
@@ -26,13 +26,14 @@ $(function() {
 	$( "#sortable" ).disableSelection();
 	//services/addbucket
 
+	//copy item
 	$( ".bucket-child" ).droppable({
 		activeClass: "ui-state-hover",
 		drop: function( event, ui ) {
 			console.log($(this), ui.draggable);
 			var data = {"bucket_id": $(this).data('id'), "item_id": $(ui.draggable).data('id')}
 			$.ajax({
-				url: "http://localhost:8000/services/additem",
+				url: "http://localhost:8000/services/copyitem",
 				type: 'POST',
 				contentType: "application/json",
 				dataType: "text",
