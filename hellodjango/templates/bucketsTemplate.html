@@ -1,6 +1,7 @@
 
 <meta charset="utf-8">
-
+<!-- use localhost to host css files -->
+<!-- python -m SimpleHTTPServer 9000 -->
 {% block css %}
 <link href="http://localhost:9000/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="http://localhost:9000/css/buckets.css" rel="stylesheet">
@@ -30,7 +31,7 @@
 	  <div class="bucket-parent">
 	    {% for bucket in decisions.0.buckets %}
 	    <div class="bucket-outline">
-	      <div class="bucket-child">{{bucket.name}}{{bucket.items}}</div>
+	      <div class="bucket-child">{{bucket.name}}</div>
 	    </div>
 	    {% endfor %}
 	    <div class="bucket-outline-add">
@@ -47,7 +48,7 @@
 
   <ul id="sortable">
     <!-- make this the current bucket instead of 0th -->
-    {% for item in buckets.0.items %}
+    {% for item in decisions.0.buckets.0.items %}
     <li class="ui-state-default">
       <div class="spacer">
 	<div class="bucket-wrapper">
