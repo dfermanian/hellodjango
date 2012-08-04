@@ -51,13 +51,13 @@
 	
 
 
-	<div class="bucket-wrapper" onclick="SimpleModal.open('http://localhost:9000/expanded_view', 800, 800, function(data) { alert(data); });">
+	<div class="bucket-wrapper">
 	  <div class="image-wrapper">
 	    <img class="media" src="{{item.image_url}}">
 	  </div>
-	  <div class="media-desc">
+	  <a class="media-desc" href="http://localhost:9000/hellodjango/templates/expandedView.html">
 	    <div class="text-box">{{item.name}}</div>
-	  </div>
+	  </a>
 	</div>
       </div>	
     </li>
