@@ -1,0 +1,85 @@
+<meta charset="utf-8">
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="../css/buckets.css" rel="stylesheet">
+<link href="../css/nav.css" rel="stylesheet">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="">
+	
+	<script>
+	$(function() {
+		$( "#sortable" ).sortable();
+		$( "#sortable" ).disableSelection();
+	});
+	</script>
+
+	<header>
+		<div class="navbar narvbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					
+					<div class="logo-alt">
+						<img src="../imgs/logo.png">
+					</div>
+					
+					<div class="nbar">
+						<div class="bucket-parent">
+							<div class="bucket-outline">
+								<div class="bucket-child">Decisions</div>
+							</div>
+						</div>
+					
+					</div>
+
+
+				</div>	
+			</div>	
+		</div>	
+	</header>
+
+<div class="demo">
+
+<ul id="sortable">
+	<li class="ui-state-default">
+	  <div class="spacer">
+		<div class="bucket-wrapper">
+			<div class="outer-decisions"> 
+			  		<div class="text-decisions"> Houses </div>
+			</div>
+		</div>
+	  </div>	
+	</li>
+	
+	<li class="ui-state-default">
+	  <div class="spacer">
+		<div class="bucket-wrapper">
+			  	<div class="text-decisions"> Cars </div>
+		</div>
+	  </div>	
+	</li>
+	
+		
+		<li class="ui-state-default">
+
+			<div class="spacer">
+				<div class="outer">
+					<div class="bucket-wrapper-add">
+						<img class="plus-sign" src="http://www.clker.com/cliparts/a/M/5/t/c/C/gray-plus-th.png"/>
+				
+					</div>
+				</div>
+				
+				
+				
+				
+			  </div>
+
+		</li>
+		
+	</li>
+
+</ul>
+
+</div><!-- End demo -->
+
+
