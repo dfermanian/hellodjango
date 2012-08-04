@@ -1,7 +1,7 @@
 $(function() {
-	$( "#sortable" ).sortable({
+	$( ".sortable, .selected_sortable" ).sortable({
 		update: function( event, ui ){
-			var list = $('#sortable li');
+			var list = $('.selected_sortable li');
 			console.log(list);
 			var elts = [];
 			$.each(list, function(index, value){
@@ -72,5 +72,29 @@ $(function() {
 	$('.bucket-wrapper-add').on('click', function(){
 		console.log('additem');
 	});
+	
+	$('.bucket-child').on('click', function(){
+		console.log($(this));
+		
+		console.log("FUCKTHIS");
+		var self = $(this);
+		if(self.hasClass('selected-bucket')){}
+		else{
+		$('.bucket-child').removeClass('selected-bucket');
+		self.addClass('selected-bucket');
+		
+		var id = self.data('id');
+		$('.selected_sortable').addClass('sortable').removeClass("selected_sortable");
+		$('.bucket' + id).addClass("selected_sortable")
+						.removeClass("sortable");
+						
+						
+						
+							
+		}
+		
+	});
+	
+	
 	
 });

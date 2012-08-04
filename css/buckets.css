@@ -1,3 +1,5 @@
+
+
 .media {
 	
 	width: 100%;
@@ -83,15 +85,14 @@
 	font-size: 12px;
 }
 
-.
-
-#sortable { 
+.sortable { 
+	display: none;
 	list-style-type: none; 
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-#sortable li { 
+.sortable li, .selected_sortable li { 
 	margin: 3px 3px 3px 0;
 	padding: 1px;
 	float: left;
@@ -100,4 +101,11 @@
 	font-size: 4em;
 	text-align: center; 
 }	
+.selected_sortable {
+	list-style-type: none; 
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+}
 

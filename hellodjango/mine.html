@@ -16,6 +16,16 @@
 		$( "#sortable" ).disableSelection();
 	});
 	</script>
+	
+	
+	$.ajax({
+		url: "http://localhost:8000/services/copyitem",
+		type: 'POST',
+		contentType: "application/json",
+		dataType: "text",
+		data: JSON.stringify(data),
+		success: function(){console.log('success')}
+	});
 
 	</head>
 	<body>
