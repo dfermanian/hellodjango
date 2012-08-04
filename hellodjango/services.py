@@ -50,8 +50,14 @@ def copyitem(request):
 	
 		
 def additem(request):
-	
-	
+	data = json.loads(request.raw_post_data)['list'];
+	for item in data:
+		new_id = len(Item.objects.all()) + 1
+		parent_bucket = Bucket.objects.get(id=item["bucket_id"])
+		i = Item(new_id, item["name"], item["position"], item["image_url"])
+		i.buckets.add(parent_bucket)
+		i.save()
+	return HttpResponse("OK")	
 	
 def addbucket(request):
 	
