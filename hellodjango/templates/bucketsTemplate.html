@@ -1,32 +1,3 @@
-<!-- <html> -->
-<!--   <body> -->
-<!--     {% for bucket in buckets %} -->
-<!--     {{templateValues}} -->
-<!--     {{bucket.name}} -->
-<!--     <img src="{{bucket.image_url}}"/> -->
-<!--     {% endfor %} -->
-<!--   </body> -->
-<!-- </html> -->
-
-<!-- <html> -->
-<!-- <body> -->
-<!-- {% for decision in decisions %} -->
-<!-- 	{{decision.name}}<br/> -->
-<!-- 	{% for bucket in decision.buckets %} -->
-<!-- 		{{bucket.name}}<br/> -->
-<!-- 		{% for item in bucket.items %} -->
-<!-- 			{{item.name}}<br/> -->
-<!-- 			{% for attribute in item.attributes %} -->
-<!-- 				{{attribute.name}}<br/> -->
-<!-- 			{% endfor %} -->
-<!-- 		{% endfor %} -->
-<!-- 	{% endfor %} -->
-<!-- {% endfor %} -->
-<!-- </body> -->
-<!-- </html> -->
-
-
-
 
 <meta charset="utf-8">
 
@@ -57,9 +28,9 @@
 	</div>
 	<div class="nbar">
 	  <div class="bucket-parent">
-	    {% for bucket in buckets %}
+	    {% for bucket in decisions.0.buckets %}
 	    <div class="bucket-outline">
-	      <div class="bucket-child">{{bucket.name}}</div>
+	      <div class="bucket-child">{{bucket.name}}{{bucket.items}}</div>
 	    </div>
 	    {% endfor %}
 	    <div class="bucket-outline-add">
