@@ -40,21 +40,20 @@ def moveitem(request):
 
 		
 def copyitem(request):
-	data = json.loads(request.raw_post_data)['list'];
-	for item in data:
-		i = Item.objects.get(id=item["item_id"])
-		b = Bucket.objects.get(id=item["bucket_id"])
-		i.buckets.add(b)
-		i.save()
+	data = json.loads(request.raw_post_data);
+	i = Item.objects.get(id=item["item_id"])
+	b = Bucket.objects.get(id=item["bucket_id"])
+	i.buckets.add(b)
+	i.save()
 	return HttpResponse("OK")
 	
 		
 def additem(request):
-	
+	pass
 	
 	
 def addbucket(request):
-	
+	pass
 	
 
 
