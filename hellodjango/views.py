@@ -22,7 +22,7 @@ def customer_view(request, customer_id):
 				attributes = []
 				for attribute in filtered_attributes:
 					attributes.append( {"name" : attribute.name, "field" : attribute.field, "id" : attribute.id } )
-				items.append({"attributes" : attributes, "name" : item.name, "id" : item.id })
+				items.append({"attributes" : attributes, "name" : item.name, "id" : item.id , "image_url": item.image_url})
 			buckets.append({"items" : items, "name" : bucket.name, "image_url" : bucket.image_url, "id" : bucket.id})	
 		decisions.append({"buckets" : buckets, "name" : decision.name, "id" : decision.id })
 	templateValues = {"decisions" : decisions, "id" : customer_id }
