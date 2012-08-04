@@ -18,11 +18,11 @@ def customer_view(request, customer_id):
 				filtered_attributes = sorted(Attribute.objects.filter(item_id = item.id), key=lambda Attribute: Attribute.position)
 				attributes = []
 				for attribute in filtered_attributes:
-					attributes.append( {"name" : attribute.name, "field" : attribute.field} )
-				items.append({"attributes" : attributes, "name" : item.name})
-			buckets.append({"items" : items, "name" : bucket.name, "image_url" : bucket.image_url})	
-		decisions.append({"buckets" : buckets, "name" : decision.name})
-	templateValues = {"decisions" : decisions}
+					attributes.append( {"name" : attribute.name, "field" : attribute.field, "id" : attribute.id } )
+				items.append({"attributes" : attributes, "name" : item.name, "id" : item.id })
+			buckets.append({"items" : items, "name" : bucket.name, "image_url" : bucket.image_url, "id" : bucket.id})	
+		decisions.append({"buckets" : buckets, "name" : decision.name, "id" : decision.id })
+	templateValues = {"decisions" : decisions, "id" : customer_id }
 	return render(request, 'bucketsTemplate.html', templateValues)
 	
 
