@@ -9,6 +9,9 @@ urlpatterns = patterns('',
 	(r'^decisions/(\d+)/$', 'hellodjango.views.decision_view'),
 	(r'^decisions/(\d+)/buckets/$', 'hellodjango.views.bucket_view'),
 	(r'^buckets/(\d+)/$', 'hellodjango.views.bucket_view'),
+	(r'^customers/(\d+)/$', 'hellodjango.views.customer_view'),
+	(r'^services/savebuckets$', 'hellodjango.services.savebuckets'),
+	(r'^services/moveitem$', 'hellodjango.services.moveitem'),
 	
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),
