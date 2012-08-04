@@ -13,7 +13,7 @@ $(function() {
 			console.log(elts);
 			data = {"list": elts}
 			$.ajax({
-				url: "http://localhost:8000/services/moveitem",
+				url: "http://localhost:8000/services/copyitem",
 				type: 'POST',
 				contentType: "application/json",
 				dataType: "text",
@@ -32,11 +32,13 @@ $(function() {
 			console.log($(this), ui.draggable);
 			var data = {"bucket_id": $(this).data('id'), "item_id": $(ui.draggable).data('id')}
 			$.ajax({
-	            url: "services/",
-	            type: 'POST',
-	            data: data,
-	            success: function(){}
-	        });
+				url: "http://localhost:8000/services/additem",
+				type: 'POST',
+				contentType: "application/json",
+				dataType: "text",
+				data: JSON.stringify(data),
+				success: function(){console.log('success')}
+			});
 			
 		}
 	});
