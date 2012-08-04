@@ -46,6 +46,8 @@ $(function() {
 	
 	//add top bar bucket
 	$('.bucket-outline-add').on('click', function(){
+		pos = $('#sortable li');
+		console.log(pos);
 		var answer = prompt ("New bucket name: ");
 		console.log(answer);
 		var newBucket = $(document.createElement("div"));
@@ -55,6 +57,16 @@ $(function() {
 		container.append(newBucket);
 		container.addClass("bucket-outline");
 		$('#add-bucket').before(container);
+		answer prompt 
+		var data = {"position": pos, "name": answer}
+		$.ajax({
+			url: "http://localhost:8000/services/additem",
+			type: 'POST',
+			contentType: "application/json",
+			dataType: "text",
+			data: JSON.stringify(data),
+			success: function(){console.log('success')}
+		});
 	});
 	
 	//add item
