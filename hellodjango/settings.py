@@ -103,6 +103,7 @@ ROOT_URLCONF = 'hellodjango.urls'
 WSGI_APPLICATION = 'hellodjango.wsgi.application'
 
 TEMPLATE_DIRS = (
+	"hellodjango/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -112,13 +113,13 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+	'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+	'django.contrib.admindocs',
 	'hellodjango',
 )
 
