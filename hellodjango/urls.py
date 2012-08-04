@@ -15,7 +15,7 @@ urlpatterns = patterns('',
 	(r'^services/moveitem$', 'hellodjango.services.moveitem'),
 	(r'^services/additem$', 'hellodjango.services.additem'),
 	(r'^services/copyitem$', 'hellodjango.services.copyitem'),
-	#(r'^services/addbucket$', 'hellodjango.services.addbucket'),
+	(r'^services/addbucket$', 'hellodjango.services.addbucket'),
 	
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),

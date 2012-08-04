@@ -62,7 +62,6 @@ def addbucket(request):
 	item = json.loads(request.raw_post_data);
 	index = len(Bucket.objects.all)
 	b = Bucket(index, 1, item["name"], "", item["position"])
-	
 	return HttpResponse("OK")
 	
 	
