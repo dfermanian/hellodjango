@@ -1,13 +1,13 @@
 <html>
 <body>
 {% for decision in decisions %}
-	{{decision.name}}<br/>
+	<p style="margin-left:0px;">{{decision.name}}</p>
 	{% for bucket in decision.buckets %}
-		{{bucket.name}}<br/>
+		<p style="margin-left:10px;">{{bucket.name}}</p>
 		{% for item in bucket.items %}
-			{{item.name}}<br/>
+			<p style="margin-left:20px;">{{item.name}}</p>
 			{% for attribute in item.attributes %}
-				{{attribute.name}}<br/>
+				<p style="margin-left:30px;">{{attribute.name}}<br/>
 			{% endfor %}
 		{% endfor %}
 	{% endfor %}
