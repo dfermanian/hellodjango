@@ -8,6 +8,7 @@ urlpatterns = patterns('',
 	(r'^decisions/$', 'hellodjango.views.decisions_view'),
 	(r'^decisions/(\d+)/$', 'hellodjango.views.decisions_view'),
 	(r'^decisions/(\d+)/buckets/$', 'hellodjango.views.buckets_view'),
+	(r'^buckets/(\d+)/$', 'hellodjango.views.buckets_view'),
 	
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),

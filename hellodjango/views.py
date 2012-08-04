@@ -1,28 +1,24 @@
 from django.http import HttpResponse
 
-from hellodjango.models import Decision, Bucket
+from hellodjango.models import Decision, Bucket, Item
 from django.shortcuts import render
 
 
 
 
-def decisions_view(request):
-	count = len(Decision.objects.all())
-	html = "<html> <body> There are %s decisions.</body></html>" % count
-	return HttpResponse(html)
-
 def decisions_view(request, decision_id):
-	d = Decision.objects.get(pk=decision_id)
-	html = "<html> <body>%s</body></html>" % d
-	return HttpResponse(html)
+	buckets = Bucket.objects.filter(decision_id=decision_id)
+	templateValues = {'buckets' : buckets }
+	return render(request, 'bucketsTemplate.html', templateValues)
+	
 
 #def buckets_view(request, decision_id):
 #	count = len(Bucket.objects.all())
 #	html = "<html> <body> There are %s buckets.</body></html>" % count
 #	return HttpResponse(html)
 
-def buckets_view(request, decision_id):
+def buckets_view(request, bucket_id):
 	#Bucket.objects.filter(decision_id=1).get(position=1)
-	buckets = Bucket.objects.filter(decision_id=decision_id)
-	templateValues = {'buckets' : buckets }
-	return render(request, 'bucketsTemplate.html', templateValues)
+	items = Item.objects.filter(bucket_id=bucket_id)
+	templateValues = {'items' : items }
+	return render(request, 'itemsTemplate.html', templateValues)

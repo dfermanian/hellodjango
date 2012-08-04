@@ -1,7 +1,8 @@
 <html>
 <body>
 {% for bucket in buckets %}
-	{{bucket}}
+	{{bucket.name}}
+	<img src={{bucket.image_url}}>
 {% endfor %}
 </body>
 </html>
