@@ -59,7 +59,7 @@ def additem(request):
 		i.save()
 	return HttpResponse("OK")	
 	
-def addbucket(request):
+#def addbucket(request):
 	
 	
 
