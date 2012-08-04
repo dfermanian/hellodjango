@@ -15,7 +15,7 @@ def customer_view(request, customer_id):
 		filtered_buckets = sorted(Bucket.objects.filter(decision_id = decision.id), key=lambda Bucket: Bucket.position)
 		buckets = []
 		for bucket in filtered_buckets:
-			filtered_items = sorted(Item.objects.filter(bucket_id = bucket.id), key=lambda Item: Item.position)
+			filtered_items = sorted(Item.objects.filter(buckets = bucket), key=lambda Item: Item.position)
 			items = []
 			for item in filtered_items:
 				filtered_attributes = sorted(Attribute.objects.filter(item_id = item.id), key=lambda Attribute: Attribute.position)

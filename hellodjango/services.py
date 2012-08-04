@@ -30,17 +30,29 @@ def savebuckets(request):
 					a.position = attribute.position
 					a.save()
 		
-	
 def moveitem(request):
-	json = request.POST.get("list")
-	data = json.loads(json);
+	data = json.loads(request.raw_post_data)['list'];
 	for item in data:
-		i = Items.objects.get(id=item.id)
-		i.position = item.position
-		i.save
+		i = Item.objects.get(id=item["id"])
+		i.position = item[position]
+		i.save()
 		
+def copyitem(request):
+	json = request.POST.get("list")
+	data = json.loads(json)
+	for item in data:
+		i = Item.objects.get(id=item["item_id"])
+		b = Bucket.objects.get(id=item["bucket_id"])
+		i.buckets.add(b)
+		i.save()
 		
-		
-		
+
+
+
+
+
+
+
+
 
 

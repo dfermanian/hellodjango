@@ -22,7 +22,7 @@ class Bucket(models.Model):
 	        return self.decision.customer.email  + "; " + self.decision.name + "; " + self.image_url + "; " + self.name
 
 class Item(models.Model):
-	bucket = models.ForeignKey(Bucket)
+	buckets = models.ManyToManyField(Bucket)
 	name = models.CharField(max_length=200)
 	position = models.IntegerField()
 	image_url = models.TextField()
