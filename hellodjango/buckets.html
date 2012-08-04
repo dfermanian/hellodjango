@@ -5,14 +5,10 @@
 <link href="../css/style.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+	<script src="../js/buckets.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="">
 	
-	<script>
-	$(function() {
-		$( "#sortable" ).sortable();
-		$( "#sortable" ).disableSelection();
-	});
-	</script>
+
 
 	<header>
 		<div class="navbar narvbar-fixed-top">
@@ -25,7 +21,7 @@
 					
 					<div class="nbar">
 						<div class="bucket-parent">
-							<div class="bucket-outline">
+							<div class="bucket-outline droppable">
 								<div class="bucket-child">Interested In</div>
 							</div>
 							<div class="bucket-outline">
@@ -46,7 +42,7 @@
 
 <div class="demo">
 
-<ul id="sortable">
+<ul id="sortable" class="draggable">
 	<li class="ui-state-default">
 	  <div class="spacer">
 		<div class="bucket-wrapper">

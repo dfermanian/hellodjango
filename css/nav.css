@@ -32,6 +32,7 @@
 	position: relative;
 }
 
+
 .bucket-outline {
 	background-color: #069;
 	border-radius: 5px;
@@ -40,6 +41,10 @@
 	white-space:normal;
 	width: 150px;
 	display: inline-block;
+}
+
+.ui-state-hover {
+	background-color: #BBB !important;
 }
 
 .bucket-child:hover {
@@ -60,6 +65,15 @@
 	font-weight: bold;
 	text-shadow: 0.15em 0.15em 0.15em #36454F;
 	font-size: 16px;
+}
+
+.selected-bucket {
+	background-color: #069 !important;
+	
+}
+
+.selected-bucket:hover{
+	cursor: default;
 }
 
 .bucket-outline-add {
