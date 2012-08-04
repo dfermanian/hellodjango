@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from hellodjango.models import Customer, Decision, Bucket, Item, Attribute
 from django.shortcuts import render
 
+
+
 # ORDER ALL BY POSITION!
 
 def customer_view(request, customer_id):

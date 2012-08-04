@@ -32,14 +32,18 @@ def savebuckets(request):
 		
 	
 def moveitem(request):
-	json = request.POST.get("list")
-	data = json.loads(json);
+	print "\n\n\n\n\n", request.raw_post_data
+	res = json.loads(request.raw_post_data)
+	
+	print "\n\n\n\n\n\n", res
+	data = res['list']
+	print "\n\n\n", data
 	for item in data:
-		i = Items.objects.get(id=item.id)
-		i.position = item.position
+		i = Item.objects.get(id=item["id"])
+		i.position = item["position"]
 		i.save
 		
-		
+	return HttpResponse("OK")
 		
 		
 
