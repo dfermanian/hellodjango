@@ -43,10 +43,16 @@ $(function() {
 	
 	//add top bar bucket
 	$('.bucket-outline-add').on('click', function(){
-		console.log("add bucket");
+		var answer = prompt ("New bucket name: ");
+		console.log(answer);
+		var newBucket = $(document.createElement("div"));
+		newBucket.addClass("bucket-child");
+		newBucket.html(answer);
+		var container = $(document.createElement("div"));
+		container.append(newBucket);
+		container.addClass("bucket-outline");
+		$('#add-bucket').before(container);
 	});
-	
-
 	
 	//add item
 	$('.bucket-wrapper-add').on('click', function(){
