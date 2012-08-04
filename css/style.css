@@ -255,11 +255,25 @@ ul, li {
 .dialog-key {
 	font-weight: bold;
 	font-size: 25px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 }
 
 .dialog-value {
 	font-size: 15px;
+	padding-bottom: 20px;
+}
+
+.dialog-key-bot {
+	font-weight: bold;
+	font-size: 25px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+
+.dialog-val-bot {
+	font-size: 15px;
+	padding-left: 20px;
+	padding-bottom: 20px;
 }
 
 .dialog-comments {
