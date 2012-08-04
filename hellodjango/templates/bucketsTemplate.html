@@ -1,8 +1,13 @@
 <html>
 <body>
-{% for bucket in buckets %}
-	{{bucket.name}}
-	<img src={{bucket.image_url}}>
+{% for decision in decisions %}
+	{{decision.name}}
+	{% for bucket in decision.buckets %}
+		{{bucket.name}}
+		{% for item in bucket.items %}
+			{{decision.name}}
+		{% endfor %}
+	{% endfor %}
 {% endfor %}
 </body>
 </html>
