@@ -12,6 +12,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 <script src="http://localhost:9000/js/buckets.js"></script>
+<script src="http://localhost:9000/js/popup.js"></script>
+<script src="http://localhost:9000/js/SimpleModal.js"></script>
 {% endblock %}
 
 
@@ -41,6 +43,7 @@
 </header>
 
 <div class="demo">
+
 {% for bucket in decisions.0.buckets %}
   <ul class="{% if forloop.first %} selected_sortable {% else %}sortable {% endif %} bucket{{bucket.id}}">
     <!-- make this the current bucket instead of 0th -->
@@ -49,13 +52,16 @@
 	{% if item.id and item.image_url and item.name %}
     <li data-id="{{item.id}}" class="ui-state-default">
       <div class="spacer">
+	
+
+
 	<div class="bucket-wrapper">
 	  <div class="image-wrapper">
 	    <img class="media" src="{{item.image_url}}">
 	  </div>
-	  <div class="media-desc">
+	  <a class="media-desc" href="http://localhost:9000/hellodjango/templates/expandedView.html">
 	    <div class="text-box">{{item.name}}</div>
-	  </div>
+	  </a>
 	</div>
       </div>	
     </li>
