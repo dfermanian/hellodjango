@@ -31,195 +31,205 @@
 <meta charset="utf-8">
 
 {% block css %}
-<link href="http://localhost:9000/hellodjango/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="http://localhost:9000/hellodjango/css/buckets.css" rel="stylesheet">
-<link href="http://localhost:9000/hellodjango/css/nav.css" rel="stylesheet">	
+<link href="http://localhost:9000/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="http://localhost:9000/css/buckets.css" rel="stylesheet">
+<link href="http://localhost:9000/css/nav.css" rel="stylesheet">	
 <link rel="stylesheet" type="text/css" media="screen" href="">
 {% endblock %}
 {% block script %}
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 {% endblock %}
-	
-	<script>
-	$(function() {
-		$( "#sortable" ).sortable();
-		$( "#sortable" ).disableSelection();
-	});
-	</script>
 
-	<header>
-		<div class="navbar narvbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					
-					<div class="logo-alt">
-						<img src="http://localhost:9000/hellodjango/imgs/logo.png">
-					</div>
-					
-					<div class="nbar">
-						<div class="bucket-parent">
-							<div class="bucket-outline">
-								<div class="bucket-child">Interested In</div>
-							</div>
-							<div class="bucket-outline">
-								<div class="bucket-child">Visiting</div>
-							</div>
-							<div class="bucket-outline-add">
-								<div class="bucket-child-add">+</div>
-							</div>
-						</div>
-					
-					</div>
+<script>
+  $(function() {
+  $( "#sortable" ).sortable();
+  $( "#sortable" ).disableSelection();
+  });
+</script>
 
-
-				</div>	
-			</div>	
-		</div>	
-	</header>
+<header>
+  <div class="navbar narvbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+	<div class="logo-alt">
+	  <img src="http://localhost:9000/imgs/logo.png">
+	</div>
+	<div class="nbar">
+	  <div class="bucket-parent">
+	    {% for bucket in buckets %}
+	    <div class="bucket-outline">
+	      <div class="bucket-child">{{bucket.name}}:{{bucket.items}}</div>
+	    </div>
+	    {% endfor %}
+	    <div class="bucket-outline-add">
+	      <div class="bucket-child-add">+</div>
+	    </div>
+	  </div>
+	</div>
+      </div>	
+    </div>	
+  </div>	
+</header>
 
 <div class="demo">
 
-<ul id="sortable">
-	<li class="ui-state-default">
-	  <div class="spacer">
-		<div class="bucket-wrapper">
-			<div class="image-wrapper">
-				<img class="media" src="http://arlingtonfriendshouse.org/house1.jpg">
-			</div>
-			
-			<div class="media-desc"> 
-			  		<div class="text-box"> house 1 </div>
-			</div>
-		</div>
-	  </div>	
-	</li>
+  <ul id="sortable">
+    {% for item in buckets.1.items %}
+    <li class="ui-state-default">
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="{{buckets.0.image_url}}">
+	  </div>
+	  
+	  <div class="media-desc"> 
+	    <div class="text-box">{{item.name}} </div>
+	  </div>
+	</div>
+      </div>	
+    </li>
+    {% endfor %}
+    
+    <li class="ui-state-default">
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://arlingtonfriendshouse.org/house1.jpg">
+	  </div>
+	  
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 1 </div>
+	  </div>
+	</div>
+      </div>	
+    </li>
+    
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://listverse.files.wordpress.com/2007/10/dome-house-pensacola-beach-florida-1.jpg">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 2 </div>
+	  </div>
+	</div>
+      </div>
+      
+    </li>
+    
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://25.media.tumblr.com/tumblr_m72qevflC21rtlhqgo1_500.jpg">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 3 </div>
+	  </div>
+	</div>
+      </div>
+      
+    </li>
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://realtorfortlauderdaleflorida.com/wp-content/uploads/2011/08/houses-for-sale-fort-lauderdale1.jpg">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 4 </div>
+	  </div>
+	</div>
+      </div>
+      
+    </li>
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://pics4.city-data.com/cpicc/cfiles40024.jpg">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 5 </div>
+	  </div>
+	</div>
+      </div>
+      
+    </li>
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://sheilasalvitti.com/blog/wp-content/uploads/2011/03/abberley-lane-front-exterior-viaSouthernLiving1.jpg">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 6 </div>
+	  </div>
+	</div>
+      </div>
+      
+    </li>
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://4.bp.blogspot.com/_FhopQJCeVu8/TCt3CJSqS3I/AAAAAAAABuU/7XhrPfKF2Eg/s1600/pretty+house+on+Summit+Ave.jpg">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 7 </div>
+	  </div>
+	</div>
+      </div>
+      
+    </li>
+    <li class="ui-state-default">
+      
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="image-wrapper">
+	    <img class="media" src="http://2.bp.blogspot.com/_WPFbfgnttOo/SFsg9eAH10I/AAAAAAAAAc4/LOUfchYdc30/s400/gorgeous%2Bbrick%2Bhouse%2B-%2Bheidi.JPG">
+	  </div>
+
+	  <div class="media-desc"> 
+	    <div class="text-box"> house 8 </div>
+	  </div>
+	</div>
+      </div>
+      
+    <li class="ui-state-default">
+
+      <div class="spacer">
+	<div class="outer">
+	  <div class="bucket-wrapper-add">
+	    <img class="plus-sign" src="http://www.clker.com/cliparts/a/M/5/t/c/C/gray-plus-th.png"/>
+	    
+	  </div>
+	</div>
 	
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://listverse.files.wordpress.com/2007/10/dome-house-pensacola-beach-florida-1.jpg">
-				</div>
-
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 2 </div>
-				</div>
-			</div>
-		  </div>
-		
-	</li>
 	
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://25.media.tumblr.com/tumblr_m72qevflC21rtlhqgo1_500.jpg">
-				</div>
+	
+	
+      </div>
 
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 3 </div>
-				</div>
-			</div>
-		  </div>
-		
-	</li>
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://realtorfortlauderdaleflorida.com/wp-content/uploads/2011/08/houses-for-sale-fort-lauderdale1.jpg">
-				</div>
+    </li>
+    
+    </li>
 
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 4 </div>
-				</div>
-			</div>
-		  </div>
-		
-	</li>
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://pics4.city-data.com/cpicc/cfiles40024.jpg">
-				</div>
-
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 5 </div>
-				</div>
-			</div>
-		  </div>
-		
-	</li>
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://sheilasalvitti.com/blog/wp-content/uploads/2011/03/abberley-lane-front-exterior-viaSouthernLiving1.jpg">
-				</div>
-
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 6 </div>
-				</div>
-			</div>
-		  </div>
-		
-	</li>
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://4.bp.blogspot.com/_FhopQJCeVu8/TCt3CJSqS3I/AAAAAAAABuU/7XhrPfKF2Eg/s1600/pretty+house+on+Summit+Ave.jpg">
-				</div>
-
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 7 </div>
-				</div>
-			</div>
-		  </div>
-		
-	</li>
-	<li class="ui-state-default">
-		
-		<div class="spacer">
-			<div class="bucket-wrapper">
-				<div class="image-wrapper">
-					<img class="media" src="http://2.bp.blogspot.com/_WPFbfgnttOo/SFsg9eAH10I/AAAAAAAAAc4/LOUfchYdc30/s400/gorgeous%2Bbrick%2Bhouse%2B-%2Bheidi.JPG">
-				</div>
-
-				<div class="media-desc"> 
-				  		<div class="text-box"> house 8 </div>
-				</div>
-			</div>
-		  </div>
-		
-		<li class="ui-state-default">
-
-			<div class="spacer">
-				<div class="outer">
-					<div class="bucket-wrapper-add">
-						<img class="plus-sign" src="http://www.clker.com/cliparts/a/M/5/t/c/C/gray-plus-th.png"/>
-				
-					</div>
-				</div>
-				
-				
-				
-				
-			  </div>
-
-		</li>
-		
-	</li>
-
-</ul>
+  </ul>
 
 </div><!-- End demo -->
 
