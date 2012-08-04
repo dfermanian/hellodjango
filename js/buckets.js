@@ -31,7 +31,7 @@ $(function() {
 		activeClass: "ui-state-hover",
 		drop: function( event, ui ) {
 			console.log($(this), ui.draggable);
-			var data = {"bucket_id": $(this).data('id'), "item_id": $(ui.draggable).data('id')}
+			var data = {"bucket_id": $(this).data('id'), "item_id": $(ui.draggable).data('id')};
 			$.ajax({
 				url: "http://localhost:8000/services/copyitem",
 				type: 'POST',
@@ -46,7 +46,7 @@ $(function() {
 	
 	//add top bar bucket
 	$('.bucket-outline-add').on('click', function(){
-		pos = $('#sortable li');
+		pos = $(".bucket-parent .bucket-child").length;
 		console.log(pos);
 		var answer = prompt ("New bucket name: ");
 		console.log(answer);
@@ -57,10 +57,9 @@ $(function() {
 		container.append(newBucket);
 		container.addClass("bucket-outline");
 		$('#add-bucket').before(container);
-		answer prompt 
-		var data = {"position": pos, "name": answer}
+		var data = {"position": pos, "name": answer};
 		$.ajax({
-			url: "http://localhost:8000/services/additem",
+			url: "http://localhost:8000/services/addbucket",
 			type: 'POST',
 			contentType: "application/json",
 			dataType: "text",
