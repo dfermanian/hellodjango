@@ -25,7 +25,8 @@ class Item(models.Model):
 	bucket = models.ForeignKey(Bucket)
 	name = models.CharField(max_length=200)
 	position = models.IntegerField()
-	image_url = models.CharField(max_length=1000)
+	image_url = models.TextField()
+# 	image_url = models.CharField(max_length=1000)
 	def __unicode__(self):
 	        return self.bucket.decision.customer.email + "; " + self.bucket.decision.name + "; " + self.bucket.name + "; " + self.name
 
