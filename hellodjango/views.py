@@ -40,10 +40,10 @@ buckets = [{"items": [{"attributes": [{"name": name, "string": string}],
 			}]			
 """	
 
-def decision_view(request, decision_id):
+def decision_view(request, decision_id=1):
 	buckets = Bucket.objects.filter(decision_id=decision_id)
 	templateValues = {'buckets' : buckets }
-	return render(request, 'bucketsTemplate.html', templateValues)
+	return render(request, 'decisions.html', templateValues)
 
 def bucket_view(request, bucket_id):
 	#Bucket.objects.filter(decision_id=1).get(position=1)
