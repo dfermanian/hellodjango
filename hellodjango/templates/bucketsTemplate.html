@@ -12,6 +12,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 <script src="http://localhost:9000/js/buckets.js"></script>
+<script src="http://localhost:9000/js/popup.js"></script>
+<script src="http://localhost:9000/js/SimpleModal.js"></script>
 {% endblock %}
 
 
@@ -41,13 +43,15 @@
 </header>
 
 <div class="demo">
-
   <ul id="sortable">
     <!-- make this the current bucket instead of 0th -->
     {% for item in decisions.0.buckets.0.items %}
     <li data-id="{{item.id}}" class="ui-state-default">
       <div class="spacer">
-	<div class="bucket-wrapper">
+	
+
+
+	<div class="bucket-wrapper" onclick="SimpleModal.open('http://localhost:9000/expanded_view', 800, 800, function(data) { alert(data); });">
 	  <div class="image-wrapper">
 	    <img class="media" src="{{item.image_url}}">
 	  </div>

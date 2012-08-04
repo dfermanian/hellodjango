@@ -53,13 +53,18 @@ def bucket_view(request, bucket_id):
 	templateValues = {'items' : items }
 	return render(request, 'itemsTemplate.html', templateValues)
 
-def item_view(request, item_id):
-	attributes = Attributes.objects.filter(item_id=item_id)
-	templateValues = {'attributes' : attributes}
-	return render()
+# def item_view(request, item_id):
+# 	attributes = Attributes.objects.filter(item_id=item_id)
+# 	templateValues = {'attributes' : attributes}
+# 	return render()
 	
 
 #def buckets_view(request, decision_id):
 #	count = len(Bucket.objects.all())
 #	html = "<html> <body> There are %s buckets.</body></html>" % count
 #	return HttpResponse(html)
+
+def expanded_view(request, item_id):
+	attributes = Attribute.objects.filter(item_id=item_id)
+	templateValues = {'attributes' : attributes}
+	return render(request, "expandedView.html", templateValues)
