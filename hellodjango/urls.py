@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+	(r'^login/$', 'hellodjango.views.login_view'),
 	(r'^decisions/$', 'hellodjango.views.decision_view'),
 	(r'^decisions/(\d+)/$', 'hellodjango.views.decision_view'),
 	(r'^decisions/(\d+)/buckets/$', 'hellodjango.views.bucket_view'),
