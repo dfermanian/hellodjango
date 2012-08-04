@@ -1,7 +1,7 @@
 # Django settings for hellodjango project.
 
 import dj_database_url
-#DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
