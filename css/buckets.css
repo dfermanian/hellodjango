@@ -31,6 +31,12 @@
 	border-radius: 5px;
 }
 
+.bucket-wrapper-add:hover {
+	background-color: #eee;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
 .outer:hover {
 	background-color: #eee;
 	border-radius: 5px;

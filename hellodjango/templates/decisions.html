@@ -1,7 +1,4 @@
-
 <meta charset="utf-8">
-<!-- use localhost to host css files -->
-<!-- python -m SimpleHTTPServer 9000 -->
 {% block css %}
 <link href="http://localhost:9000/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="http://localhost:9000/css/buckets.css" rel="stylesheet">
@@ -11,30 +8,34 @@
 {% block script %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
-<script src="http://localhost:9000/js/buckets.js"></script>
 {% endblock %}
 
+<script>
+  $(function() {
+  $( "#sortable" ).sortable();
+  $( "#sortable" ).disableSelection();
+  });
+</script>
 
 <header>
   <div class="navbar narvbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-<!-- 	<div class="logo-alt"> -->
-	<a href="http://127.0.0.1:8000/decisions" class="logo-alt">
+	
+	<div class="logo-alt">
 	  <img src="http://localhost:9000/imgs/logo.png">
-	</a>
+	</div>
+	
 	<div class="nbar">
 	  <div class="bucket-parent">
-	    {% for bucket in decisions.0.buckets %}
-	    	<div class="bucket-outline">
-		      <div data-id="{{bucket.id}}" class="bucket-child {% if forloop.first %} selected-bucket {% endif %}">{{bucket.name}}</div>
-		    </div>
-	    {% endfor %}
-	    <div class="bucket-outline-add">
-	      <div class="bucket-child-add">+</div>
+	    <div class="bucket-outline">
+	      <div class="bucket-child">Decisions</div>
 	    </div>
 	  </div>
+	  
 	</div>
+
+
       </div>	
     </div>	
   </div>	
@@ -43,34 +44,48 @@
 <div class="demo">
 
   <ul id="sortable">
-    <!-- make this the current bucket instead of 0th -->
-    {% for item in decisions.0.buckets.0.items %}
-    	<li data-id="{{item.id}}" class="ui-state-default">
-	      <div class="spacer">
-		<div class="bucket-wrapper">
-		  <div class="image-wrapper">
-		    <img class="media" src="{{item.image_url}}">
-		  </div>
-		  <div class="media-desc">
-		    <div class="text-box">{{item.name}}--{{item.image_url}}</div>
-		  </div>
-		</div>
-	      </div>	
-	    </li>
-    {% endfor %}
-
     <li class="ui-state-default">
+      <div class="spacer">
+
+	<div class="bucket-wrapper">
+	  <a href="http://127.0.0.1:8000/customers/1/" class="outer-decisions"> 
+	    <div class="text-decisions">     
+              Houses
+	  </div>
+	  </a>
+	</div>
+      </div>	
+    </li>
+    
+    <li class="ui-state-default">
+      <div class="spacer">
+	<div class="bucket-wrapper">
+	  <div class="text-decisions"> Cars </div>
+	</div>
+      </div>	
+    </li>
+    
+    
+    <li class="ui-state-default">
+
       <div class="spacer">
 	<div class="outer">
 	  <div class="bucket-wrapper-add">
 	    <img class="plus-sign" src="http://www.clker.com/cliparts/a/M/5/t/c/C/gray-plus-th.png"/>
+	    
 	  </div>
 	</div>
+	
+	
+	
+	
       </div>
-    <li>
-  </ul>
 
+    </li>
+    
+</li>
 
+</ul>
 
 </div><!-- End demo -->
 

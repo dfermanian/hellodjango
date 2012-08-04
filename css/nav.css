@@ -14,9 +14,7 @@
 }
 
 .nbar {
-	margin-left: 100px;
-	margin-right: 220px;
-	width: 980px ;
+	width: 100%;
 	display: inline-block;
 }
 
@@ -29,6 +27,9 @@
 	overflow: hidden;
 	vertical-align: middle;
 	line-height: 150px;
+	min-width: 600px;
+	bottom: 65px;
+	position: relative;
 }
 
 
@@ -102,9 +103,26 @@
 .bucket-child-add:hover {
 	background-color: #069;
 	cursor: pointer;
+	
 }
 
 .bucket {
 	background-color: #eee;
 	
+}
+
+.text-decisions{
+	border-radius: 5px;	
+	white-space: normal;
+	margin-top: 40px;
+	width: 150px;
+	background-color: #ccc;
+	height: 100px;
+	display: inline-block;
+	text-align: middle;
+	line-height: 100px;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0.15em 0.15em 0.15em #36454F;
+	font-size: 16px;
 }

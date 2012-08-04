@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DecisionBoard</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Le styles -->
+    <link href="http://localhost:9000/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost:9000/css/style.css" rel="stylesheet">
+    <link href="http://localhost:9000/css/nav.css" rel="stylesheet">
+
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+      background-color: #eee;	
+      }
+      body {
+      }
+      .container {
+      width: 300px;
+      }
+
+      .upper-container {
+      width: 100%;
+      }
+      .upper-container > .content {
+      background-color: #fff;
+      padding: 20px;
+      margin: 0 0px; 
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+      background-color: #fff;
+      padding: 20px;
+      margin: 0 0px; 
+      -webkit-border-radius: 10px 10px 10px 10px;
+      -moz-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      .login-form {
+      margin-left: 65px;
+      }
+      
+      legend {
+      margin-right: -50px;
+      font-weight: bold;
+      color: #404040;
+      }
+
+    </style>
+
+  </head>
+
+
+
+  <body>
+    
+    <header>
+      <div class="navbar narvbar-fixed-top">
+	<div class="navbar-inner">
+	  <div class="container">
+	    
+	    <div class="logo-alt">
+	      <img class="rounded" src="http://localhost:9000/imgs/logo.png">
+	    </div>
+	    
+	    
+
+	  </div>	
+	</div>	
+      </div>	
+    </header>
+    
+    <div class="upper-container">
+      <div class="content">
+	<div class="logo">
+	  <img src="http://localhost:9000/imgs/logo.png">
+	</div>
+      </div>
+    </div>
+    
+    <br>
+    
+    <div class="container">
+      <div class="content">
+        <div class="row">
+          <div class="login-form">
+            <h2>Login</h2>
+            <form action="">
+              <fieldset>
+                <div class="clearfix">
+                  <input type="text" placeholder="Username">
+                </div>
+                <div class="clearfix">
+                  <input type="password" placeholder="Password">
+                </div>
+		<div class="btn primary">
+                  <a href="http://127.0.0.1:8000/decisions">Sign in</a>
+		</div>
+		
+		
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /container -->
+  </body>
+</html>

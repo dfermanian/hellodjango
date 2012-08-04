@@ -7,6 +7,9 @@ from django.shortcuts import render
 
 # ORDER ALL BY POSITION!
 
+def login_view(request):
+	return render(request, 'login.html')
+
 def customer_view(request, customer_id):
 	filtered_decisions = sorted(Decision.objects.filter(customer_id = customer_id), key=lambda Decision: Decision.position)
 	decisions = []
@@ -14,14 +17,14 @@ def customer_view(request, customer_id):
 		filtered_buckets = sorted(Bucket.objects.filter(decision_id = decision.id), key=lambda Bucket: Bucket.position)
 		buckets = []
 		for bucket in filtered_buckets:
-			filtered_items = sorted(Item.objects.filter(bucket_id = bucket.id), key=lambda Item: Item.position)
+			filtered_items = sorted(Item.objects.filter(buckets = bucket), key=lambda Item: Item.position)
 			items = []
 			for item in filtered_items:
 				filtered_attributes = sorted(Attribute.objects.filter(item_id = item.id), key=lambda Attribute: Attribute.position)
 				attributes = []
 				for attribute in filtered_attributes:
 					attributes.append( {"name" : attribute.name, "field" : attribute.field, "id" : attribute.id } )
-				items.append({"attributes" : attributes, "name" : item.name, "id" : item.id })
+				items.append({"attributes" : attributes, "name" : item.name, "id" : item.id , "image_url": item.image_url})
 			buckets.append({"items" : items, "name" : bucket.name, "image_url" : bucket.image_url, "id" : bucket.id})	
 		decisions.append({"buckets" : buckets, "name" : decision.name, "id" : decision.id })
 	templateValues = {"decisions" : decisions, "id" : customer_id }
@@ -39,10 +42,10 @@ buckets = [{"items": [{"attributes": [{"name": name, "string": string}],
 			}]			
 """	
 
-def decision_view(request, decision_id):
+def decision_view(request, decision_id=1):
 	buckets = Bucket.objects.filter(decision_id=decision_id)
 	templateValues = {'buckets' : buckets }
-	return render(request, 'bucketsTemplate.html', templateValues)
+	return render(request, 'decisions.html', templateValues)
 
 def bucket_view(request, bucket_id):
 	#Bucket.objects.filter(decision_id=1).get(position=1)

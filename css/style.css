@@ -229,3 +229,39 @@ ul, li {
   color:#999;
   margin:0 35px;
 }
+
+.resize-img {
+	width: 100%;
+	height: auto;
+	max-height: 300px;
+	max-width: 400px;
+}
+
+.dialog-image {
+	float: right;
+	max-height: 300px;
+	max-width: 400px;
+	width: 65%;
+	overflow: hidden;
+	border: 10px solid #f1f1f1;
+	border-radius: 5px;
+}
+
+.dialog-info {
+	width: 30%;
+	float: left;
+}
+
+.dialog-key {
+	font-weight: bold;
+	font-size: 25px;
+	padding-bottom: 5px;
+}
+
+.dialog-value {
+	font-size: 15px;
+}
+
+.dialog-comments {
+	
+}
