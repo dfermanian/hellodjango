@@ -61,7 +61,7 @@ def additem(request):
 def addbucket(request):
 	item = json.loads(request.raw_post_data);
 	index = len(Bucket.objects.all()) + 1
-	b = Bucket(index, 1, item["name"], "", item["position"])
+	b = Bucket(index, 1, item["name"], "", item["position"]b)
 	b.save()
 	return HttpResponse("OK")
 	
