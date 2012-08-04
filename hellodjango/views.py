@@ -5,6 +5,9 @@ from django.shortcuts import render
 
 # ORDER ALL BY POSITION!
 
+def login_view(request):
+	return render(request, 'login.html')
+
 def customer_view(request, customer_id):
 	filtered_decisions = sorted(Decision.objects.filter(customer_id = customer_id), key=lambda Decision: Decision.position)
 	decisions = []
