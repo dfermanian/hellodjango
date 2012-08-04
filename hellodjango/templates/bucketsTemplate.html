@@ -1,35 +1,7 @@
-<!-- <html> -->
-<!--   <body> -->
-<!--     {% for bucket in buckets %} -->
-<!--     {{templateValues}} -->
-<!--     {{bucket.name}} -->
-<!--     <img src="{{bucket.image_url}}"/> -->
-<!--     {% endfor %} -->
-<!--   </body> -->
-<!-- </html> -->
-
-<!-- <html> -->
-<!-- <body> -->
-<!-- {% for decision in decisions %} -->
-<!-- 	{{decision.name}}<br/> -->
-<!-- 	{% for bucket in decision.buckets %} -->
-<!-- 		{{bucket.name}}<br/> -->
-<!-- 		{% for item in bucket.items %} -->
-<!-- 			{{item.name}}<br/> -->
-<!-- 			{% for attribute in item.attributes %} -->
-<!-- 				{{attribute.name}}<br/> -->
-<!-- 			{% endfor %} -->
-<!-- 		{% endfor %} -->
-<!-- 	{% endfor %} -->
-<!-- {% endfor %} -->
-<!-- </body> -->
-<!-- </html> -->
-
-
-
 
 <meta charset="utf-8">
-
+<!-- use localhost to host css files -->
+<!-- python -m SimpleHTTPServer 9000 -->
 {% block css %}
 <link href="http://localhost:9000/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="http://localhost:9000/css/buckets.css" rel="stylesheet">
@@ -57,7 +29,7 @@
 	</div>
 	<div class="nbar">
 	  <div class="bucket-parent">
-	    {% for bucket in buckets %}
+	    {% for bucket in decisions.0.buckets %}
 	    <div class="bucket-outline">
 	      <div class="bucket-child">{{bucket.name}}</div>
 	    </div>
@@ -76,7 +48,7 @@
 
   <ul id="sortable">
     <!-- make this the current bucket instead of 0th -->
-    {% for item in buckets.0.items %}
+    {% for item in decisions.0.buckets.0.items %}
     <li class="ui-state-default">
       <div class="spacer">
 	<div class="bucket-wrapper">
