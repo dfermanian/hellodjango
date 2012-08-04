@@ -6,16 +6,16 @@ from django.shortcuts import render
 # ORDER ALL BY POSITION!
 
 def customer_view(request, customer_id):
-	filtered_decisions = Decision.objects.filter(customer_id = customer_id)
+	filtered_decisions = sorted(Decision.objects.filter(customer_id = customer_id), key=lambda Decision: Decision.position)
 	decisions = []
 	for decision in filtered_decisions:
-		filtered_buckets = Bucket.objects.filter(decision_id = decision.id)
+		filtered_buckets = sorted(Bucket.objects.filter(decision_id = decision.id), key=lambda Bucket: Bucket.position)
 		buckets = []
 		for bucket in filtered_buckets:
-			filtered_items = Item.objects.filter(bucket_id = bucket.id)
+			filtered_items = sorted(Item.objects.filter(bucket_id = bucket.id), key=lambda Item: Item.position)
 			items = []
 			for item in filtered_items:
-				filtered_attributes = Attribute.objects.filter(item_id = item.id)
+				filtered_attributes = sorted(Attribute.objects.filter(item_id = item.id), key=lambda Attribute: Attribute.position)
 				attributes = []
 				for attribute in filtered_attributes:
 					attributes.append( {"name" : attribute.name, "field" : attribute.field} )

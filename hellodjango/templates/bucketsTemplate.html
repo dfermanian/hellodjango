@@ -1,11 +1,14 @@
 <html>
 <body>
 {% for decision in decisions %}
-	{{decision.name}}
+	{{decision.name}}<br/>
 	{% for bucket in decision.buckets %}
-		{{bucket.name}}
+		{{bucket.name}}<br/>
 		{% for item in bucket.items %}
-			{{decision.name}}
+			{{item.name}}<br/>
+			{% for attribute in item.attributes %}
+				{{attribute.name}}<br/>
+			{% endfor %}
 		{% endfor %}
 	{% endfor %}
 {% endfor %}
