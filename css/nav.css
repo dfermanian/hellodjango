@@ -1,0 +1,96 @@
+.logo-alt {
+	border-radius: 5px;
+	max-width: 100px;
+	height: auto;
+	overflow: hidden;
+	border: 5px solid #eee;
+	margin-top: 10px;
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+.logo-alt:hover {
+	border: 5px solid #069;
+	cursor: pointer;
+}
+
+.nbar {
+	margin-left: 100px;
+	margin-right: 220px;
+	width: 980px ;
+	display: inline-block;
+}
+
+.bucket-parent {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	white-space: nowrap;
+	width: 800px;
+	overflow: hidden;
+	vertical-align: middle;
+	line-height: 150px;
+}
+
+.bucket-outline {
+	background-color: #069;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 12px;
+	white-space:normal;
+	width: 150px;
+	display: inline-block;
+}
+
+.bucket-child:hover {
+	background-color: #069;
+	cursor: pointer;
+}
+
+.bucket-child {
+	border-radius: 5px;	
+	white-space: normal;
+	width: 150px;
+	background-color: #ccc;
+	height: 90px;
+	display: inline-block;
+	text-align: middle;
+	line-height: 90px;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0.15em 0.15em 0.15em #36454F;
+	font-size: 16px;
+}
+
+.bucket-outline-add {
+	border-radius: 5px;
+	margin: 12px;
+	white-space:normal;
+	width: 150px;
+	display: inline-block;
+}
+
+.bucket-child-add {
+	border-radius: 5px;
+	border: 5px dashed #069;
+	white-space: normal;
+	width: 150px;
+	background-color: #2c2c2c;
+	height: 90px;
+	display: inline-block;
+	text-align: middle;
+	line-height: 80px;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0.1em 0.1em 0.1em #36454F;
+	font-size: 32px;
+}
+
+.bucket-child-add:hover {
+	background-color: #069;
+	cursor: pointer;
+}
+
+.bucket {
+	background-color: #eee;
+	
+}
