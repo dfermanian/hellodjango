@@ -1,0 +1,5 @@
+HOW TO RUN
+----------
+run "python -m SimpleHTTPServer 9000" in a terminal
+run "python manager.py runserver" in another
+navigate to localhost:8000
