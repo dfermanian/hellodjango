@@ -57,6 +57,7 @@ $(function() {
 		container.append(newBucket);
 		container.addClass("bucket-outline");
 		$('#add-bucket').before(container);
+		container.on('click', bucketClick);
 		var data = {"position": pos, "name": answer};
 		$.ajax({
 			url: "http://localhost:8000/services/addbucket",
@@ -73,10 +74,10 @@ $(function() {
 		console.log('additem');
 	});
 	
-	$('.bucket-child').on('click', function(){
+	$('.bucket-child').on('click', bucketClick);
+	
+	function bucketClick(){
 		console.log($(this));
-		
-		console.log("FUCKTHIS");
 		var self = $(this);
 		if(self.hasClass('selected-bucket')){}
 		else{
@@ -88,12 +89,10 @@ $(function() {
 		$('.bucket' + id).addClass("selected_sortable")
 						.removeClass("sortable");
 						
-						
-						
-							
+										
 		}
-		
-	});
+	
+	}
 	
 	
 	
